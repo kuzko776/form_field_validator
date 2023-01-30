@@ -179,15 +179,14 @@ class MultiValidator extends FieldValidator<String?> {
 /// a special match validator to check if the input equals another provided value;
 class MatchValidator extends TextFieldValidator {
   final String errorText;
-  final String value;
-  final String value2;
+  final String matchWith;
 
   MatchValidator(
-      {required this.errorText, required this.value, required this.value2})
+      {required this.errorText, required this.matchWith})
       : super(errorText);
 
   @override
   bool isValid(String? value) {
-    return value == value2;
+    return value == matchWith;
   }
 }
